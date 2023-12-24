@@ -14,7 +14,7 @@
 	# check said interface's state
 	state=$(cat /sys/class/net/$INTERFACE/operstate)
 	
-	mac_dev=$(cat /sys/firmware/vpd/ro/wifi_mac0)
+	mac_dev=$(ip link show $INTERFACE | grep -oP '(?<=link/ether )[\da-fA-F:]{17}' | head -n 1)
 	echo "Device MAC: ${mac_dev}"
 	
 	get_mac_cur() {
