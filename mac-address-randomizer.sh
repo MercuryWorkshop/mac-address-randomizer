@@ -71,7 +71,7 @@
 	
 	mac_new_real=$(get_mac_cur)
 	if [ "${mac_new_real}" == "${mac_new}" ]; then
-		echo "Done! For enchanced privacy/anonymity, I'd use something like a VPN, and/or DoH; cheers :D"
+		echo "Done!"
 	elif [ "${mac_new_real}" == "${mac_cur}" ]; then
 		echo "Failed to change MAC address"
 	else
